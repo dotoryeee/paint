@@ -10,7 +10,7 @@ body {
 }
 
 .main--canvas {
-    margin-top: 30px;
+    margin: 50px;
     width: 800px;
     height: 700px;
     border-radius: 25px;
@@ -18,14 +18,44 @@ body {
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
+.main--controls {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.controls--btn {
+    margin-top: 20px;
+}
+
+.controls--btn button {
+    all: unset;
+    border-radius: 10px;
+    cursor: grab;
+    margin: 0 7px;
+    background-color: white;
+    padding: 7px 0;
+    width: 90px;
+    text-align: center;
+    font-size: 15px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.controls--btn button:active {
+    transform: scale(0.95);
+}
+
 .controls--colors {
-    margin-top: 40px;
+    margin-top: 30px;
     display: flex;
 }
 
 .controls--colors--color {
-    width: 50px;
-    height: 50px;
+    cursor: grab;
+    width: 60px;
+    height: 60px;
+    margin: 0 5px;
     border-radius: 50%;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
