@@ -82,6 +82,11 @@ function onMouseUp(event) {
 }
 */
 
+//우클릭 금지 사카는 함수
+function handleContext(e) {
+    e.preventDefault();
+}
+
 //캔버스가 존재 하면 이벤트 호출
 if (canvas) {
     //마우스가 캔버스 안에서 움직일 때
@@ -92,6 +97,8 @@ if (canvas) {
     canvas.addEventListener('mouseup', stopPainting)
     //마우스가 캔버스를 나갈 때
     canvas.addEventListener('mouseleave', stopPainting)
+    //컨텍스트메뉴 제거(우클릭)
+    canvas.addEventListener('contextmenu', handleContext);
 }
 
 /* --------------캔버스 컨트롤 ------------------- end */
@@ -113,3 +120,21 @@ function FillCanvas() {
 fill.addEventListener('click', FillCanvas);
 
 /* --------------FILL BTN---------------- end */
+
+
+/* --------------SAVE BTN------- start */
+//저장 버튼 찾아오기
+const saveBtn = document.getElementById('jsSave');
+
+//저장함수
+function saveAction() {
+    const image = canvas.toDataURL('image/png');
+    const link = document.createElement('a'); //anchor
+    link.href = image; //href 에 image 추가
+    link.download = 'image.png'; //파일이름 지정
+    link.click();
+}
+
+//저장 버튼 트리거 추가
+saveBtn.addEventListener('click', saveAction);
+/* --------------SAVE BTN------- end */
