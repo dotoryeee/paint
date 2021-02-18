@@ -11,8 +11,10 @@ body {
 
 .main--canvas {
     margin: 50px;
+    /* 캔버스 사이즈는 디자인 완료 후 삭제 -> JS에서 설정하기
     width: 800px;
     height: 700px;
+     */
     border-radius: 25px;
     background-color: white;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -42,7 +44,8 @@ body {
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
-.controls--btn button:active {
+.controls--btn button:active,
+.controls--colors--color:active {
     transform: scale(0.95);
 }
 
