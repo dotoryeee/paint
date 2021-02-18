@@ -1,3 +1,28 @@
+/*
+ --------------색상 선택기 ------------------- start
+ */
+
+
+//색상 컨트롤러 가져오기
+const colors = document.getElementsByClassName('jsColor');
+
+//색상컨트롤러 클릭시 color 변경
+function changeColor(event) {
+    //CSS(style) background-color 가져오기
+    ctx.strokeStyle = event.target.style.backgroundColor;
+}
+
+//색상 컨트롤러에 이벤트 넣기
+Array.from(colors).forEach(dotoryeee => dotoryeee.addEventListener('click', changeColor));
+/*
+ --------------색상 선택기 ------------------- end
+ */
+
+
+/*
+ --------------캔버스 컨트롤 ------------------- start
+ */
+
 //캔버스 찾기
 const canvas = document.getElementById('jsCanvas');
 //캔버스 크기 설정
@@ -8,9 +33,9 @@ canvas.height = 600;
 const ctx = canvas.getContext('2d');
 
 //브러쉬 사이즈
-ctx.lineWidth = 1;
-//브러쉬 색상
-ctx.strokeStyle = "#2c2c2c";
+ctx.lineWidth = 50;
+//브러쉬 색상(기본값 black 지정)
+ctx.strokeStyle = 'black';
 
 //캔버스를 드래그 할 떄 true로 변경
 let painting = false;
@@ -60,3 +85,7 @@ if (canvas) {
     //마우스가 캔버스를 나갈 때
     canvas.addEventListener('mouseleave', stopPainting)
 }
+
+/*
+ --------------캔버스 컨트롤 ------------------- end
+ */
